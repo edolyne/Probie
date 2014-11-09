@@ -1,0 +1,24 @@
+{
+  "name": "GhostHost",
+  "version": "0.9.0",
+  "description": "A custom theme for Ghost.",
+  "author": "Edolyne Long",
+  "homepage": "http://edolyne.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edolyne/Ghost-Host.git"
+  },
+  "bugs": "https://github.com/edolyne/Ghost-Host/issues",
+  "contributors": "https://github.com/edolyne/Ghost-Host/graphs/contributors",
+  "devDependencies": {
+    "browser-sync": "^1.5.2",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "~0.0.7",
+    "gulp-cleanhtml": "~0.0.2",
+    "gulp-livereload": "~2.1.0",
+    "gulp-notify": "~0.3.4-1",
+    "gulp-ruby-sass": "~0.2.0",
+    "gulp-util": "~2.2.12",
+    "gulp-watch": "~0.5.0"
+  }
+}

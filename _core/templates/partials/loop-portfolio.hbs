@@ -1,0 +1,27 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+<div class="extra-pagination inner">
+    {{pagination}}
+</div>
+
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}{{!
+}}<div class="grid__item one-third portable-one-half handheld-one-whole">
+  <article class="{{post_class}}">
+      <div class="ratio ratio--landscape flush--bottom">
+        <div class="ratio__item" style="background-image: url('{{#if image}}{{image}}{{else}}//edolyne.is/assets/design/sketchbook-lensbaby.jpg{{/if}}')"></div>
+      </div>
+      <div class="card">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt words="26"}}...</p>
+            <a class="read-more link--arrow" href="{{url}}">View Project</a>
+        </section>
+      </div>
+  </article>
+</div>{{!
+}}{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

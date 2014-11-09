@@ -1,0 +1,69 @@
+if '<%= ENV['RAKE_ENV'] %>' is 'production'
+  trap = ->
+    message = Array::join.call(arguments, " ")
+    window.debuglog.messages.push message
+    return
+
+  window.debuglog =
+    messages: []
+    log: trap
+    debug: trap
+    info: trap
+    warn: trap
+    error: trap
+    assert: trap
+    dir: trap
+    dirxml: trap
+    trace: trap
+    group: trap
+    groupCollapsed: trap
+    groupEnd: trap
+    time: trap
+    timeEnd: trap
+    timeStamp: trap
+    profile: trap
+    profileEnd: trap
+    count: trap
+    exception: trap
+    table: trap
+
+  console = window.debuglog
+
+
+
+
+###
+@class Debouncer
+
+@author
+  James E Baxley III
+  NewSpring Church
+
+@version 0.3
+
+@note
+  Handles debouncing of events via requestAnimationFrame
+    @see http://www.html5rocks.com/en/tutorials/speed/animations/
+
+###
+class Debouncer
+  constructor: (@data) ->
+
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    @.callback = @data
+    @.ticking = false
+
+  update: =>
+    @.callback and @.callback()
+    @.ticking = false
+
+  requestTick: =>
+    unless @.ticking
+      requestAnimationFrame(this.rafCallback || (this.rafCallback = this.update.bind(this)))
+      @.ticking = true
+
+  handleEvent: =>
+    @.requestTick()
+
+window.Debouncer = Debouncer

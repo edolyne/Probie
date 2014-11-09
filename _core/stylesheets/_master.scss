@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    master.css | newspring
+\*------------------------------------*/
+/**
+ *
+ * sass --watch style.scss:style.min.css --style compressed
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+
+/*	------------------------------------------------------------------------------
+	Setup (inuit defaults & overrides)
+	Because we use a variety of grids right now, this is disabled by default.
+	Please enable for all new projects moving forward!
+*/
+@import "vars";
+@import "/_core/vendor/stylesheets/core-styles/core-styles";
+
+
+/**  Begin importing your files below. **/
+
+/*	------------------------------------------------------------------------------
+    Shared Elements (fonts, tranny/player, fancybox, etc)
+    @import "../../../vendor/stylesheets/shared/example"
+*/
+
+//Hinted
+@import "/_core/vendor/stylesheets/shared/fonts/colfax-hinted/light";
+@import "/_core/vendor/stylesheets/shared/fonts/colfax-hinted/regular";
+@import "/_core/vendor/stylesheets/shared/fonts/colfax-hinted/medium";
+@import "/_core/vendor/stylesheets/shared/fonts/colfax-hinted/bold";
+@import "/_core/vendor/stylesheets/shared/fonts/colfax-hinted/black";
+@import "/_core/vendor/stylesheets/shared/fonts/font-awesome/font-awesome";
+
+
+/* @import "newspring_icons"; */
+
+/*	------------------------------------------------------------------------------
+    Master Elements
+    @import "master/example";
+*/
+
+/* @import "master/share";
+@import "master/main"; */
