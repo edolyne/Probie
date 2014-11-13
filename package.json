@@ -1,15 +1,14 @@
 {
-  "name": "GhostHost",
+  "name": "Probie",
   "version": "0.9.0",
   "description": "A custom theme for Ghost.",
-  "author": "Edolyne Long",
-  "homepage": "http://edolyne.com",
+  "author": "Engine & Irons Design Co",
+  "homepage": "http://engineandirons.co",
   "repository": {
     "type": "git",
-    "url": "https://github.com/edolyne/Ghost-Host.git"
+    "url": "https://github.com/EngineAndIrons/Probie.git"
   },
-  "bugs": "https://github.com/edolyne/Ghost-Host/issues",
-  "contributors": "https://github.com/edolyne/Ghost-Host/graphs/contributors",
+  "bugs": "https://github.com/EngineAndIrons/Probie/issues",
   "devDependencies": {
     "browser-sync": "^1.5.2",
     "gulp": "^3.8.8",

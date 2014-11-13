@@ -22,7 +22,7 @@
 $use-grids:         true;
 $use-flexbox:       false;
 $use-columns:       true;
-$use-nav:           true;
+$use-nav:           false;
 $use-options:       false;
 $use-pagination:    false;
 $use-breadcrumb:    false;
@@ -31,7 +31,7 @@ $use-marginalia:    false;
 $use-island:        false;
 $use-block-list:    false;
 $use-matrix:        false;
-$use-split:         true;
+$use-split:         false;
 $use-this-or-this:  false;
 $use-link-complex:  false;
 $use-flyout:        false;
@@ -45,31 +45,31 @@ $use-stats:         false;
 $use-greybox:       false;
 $responsive-extra:  true;
 $responsive-extended: true;
-// $debug-mode: 		true;
+//$debug-mode: 		    true;
 $debug:             true;
 
 
 /* ------------------------------------------------------------------------------
     $COLORS
 ------------------------------------------------------------------------------ */
-$green-primary: #6bac43;
-$green-secondary: #1c683e;
-$green-tertiary: #2a4930;
+/* \$green-primary: #6bac43;
+\$green-secondary: #1c683e;
+\$green-tertiary: #2a4930;
 
-$gray-primary: #dddddd;
-$gray-secondary:#858585;
-$gray-teriary: #303030;
+\$gray-primary: #dddddd;
+\$gray-secondary:#858585;
+\$gray-teriary: #303030;
 
-$tan: #bd9b68;
+\$tan: #bd9b68;
 
-$primary-color:     #64498b;
-$secondary-color:   #518933;
-$tertiary-color:    #3C6E26;
-$dark-color:        #1c1c1c;
-$tan:               #bd9b68;
-$light-color:       white;
+\$primary-color:     #64498b;
+\$secondary-color:   #518933;
+\$tertiary-color:    #3C6E26;
+\$dark-color:        #1c1c1c;
+\$tan:               #bd9b68;
+\$light-color:       white;
 
-$brand-color:       $primary-color;
+\$brand-color:       \$primary-color; */
 
 
 /* ------------------------------------------------------------------------------

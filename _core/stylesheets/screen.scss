@@ -28,7 +28,7 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
 
 /* \$primary-color: #64498B; */
-$primary-color: #E8C538;
+$primary-color: #CF3C52;
 $secondary-color: #AD423B;
 $dark-color: #191919;
 $grey-color: #CCCCCC;
@@ -1162,6 +1162,10 @@ body:not(.post-template) .post-title {
     color: $white-color;
   }
 
+  .post-date {
+    text-transform: capitalize;
+  }
+
   a {
     color: $primary-color;
   }
@@ -1329,7 +1333,7 @@ body:not(.post-template) .post-title {
 }
 
 .pagination a {
-    color: $dark-color;
+    color: $primary-color;
     transition: all 0.2s ease;
 }
 
@@ -1339,7 +1343,7 @@ body:not(.post-template) .post-title {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: $dark-color 1px solid;
+    border: $primary-color 1px solid;
     text-decoration: none;
     border-radius: 4px;
     transition: border ease 0.3s;
@@ -1617,9 +1621,10 @@ nav {
     &[data-state=closed] {
       right: 0%;
       width: 0%;
+      max-width: 0px;
       opacity: 0;
       overflow: hidden;
-      transition: all 0.15s linear;
+      transition: all 0.25s linear;
     }
 
     &[data-state=open] {
@@ -1628,7 +1633,7 @@ nav {
       max-width: 400px;
       opacity: 1;
       overflow: visible;
-      transition: all 0.15s linear;
+      transition: all 0.25s linear;
     }
 
     .nav--close {
