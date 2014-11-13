@@ -24,22 +24,28 @@
    0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
    ========================================================================== */
 
-/* @import "_vars";
-@import "../vendor/stylesheets/core-styles/core-styles"; */
+
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
 
-$primary-color: #64498B;
-/* \$primary-color: #E0B445; */
-$secondary-color: #E8C125;
+/* \$primary-color: #64498B; */
+$primary-color: #E8C538;
+$secondary-color: #AD423B;
 $dark-color: #191919;
 $grey-color: #CCCCCC;
-$white-color: #F2F2F2;
+$white-color: #F5F5F5;
+
+$alert-color: $secondary-color;
+
+$brand-color: $primary-color;
 
 $twitter-color: #55ACEE;
 $facebook-color: #3B5998;
 $google-plus-color: #DD4B39;
 $heading-font: 'Colfax', sans-serif;
 $body-font: 'Merriweather', serif;
+
+/* @import "_vars"; */
+/* @import "../vendor/stylesheets/core-styles/core-styles"; */
 
 article, aside, details,
 figcaption, figure,
@@ -188,6 +194,7 @@ html {
     max-height: 100%;
     font-size: 62.5%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden;
 }
 
 body {
@@ -481,15 +488,51 @@ margin on the iframe, cause it breaks stuff. */
     vertical-align: middle;
 }
 
+.m-focused .m-postinput {
+  box-shadow: none !important;
+  border-color: $primary-color !important;
+}
+
+.m-button, .moot button {
+  background-color: $primary-color !important;
+
+  &:hover {
+    background-color: darken($primary-color, 10) !important;
+  }
+}
+
+.moot-logo {
+  padding-top: 20px;
+}
+
+.site-footer {
+
+  section {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.newspring {
+      text-align: center;
+    }
+  }
+}
+
 
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
 
+.right {
+  float: right;
+  text-align: right;
+}
+
 header.main-header.overlay:before {
     content: '';
     display: block;
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
@@ -625,7 +668,7 @@ header.main-header.overlay:before {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    float: right;
+    vertical-align: middle;
     height: 38px;
     padding: 0 20px;
     border: transparent 1px solid;
@@ -687,6 +730,7 @@ header.main-header.overlay:before {
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
+
 .page-title {
     margin: 10px 0 10px 0;
     font-size: 5rem;
@@ -694,6 +738,12 @@ header.main-header.overlay:before {
     font-weight: 700;
     font-family: $heading-font;
     color: #fff;
+
+    &.blog-title {
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.75px;
+    }
 }
 
 .page-description {
@@ -1105,6 +1155,18 @@ body:not(.post-template) .post-title {
    6. Author profile
    ========================================================================== */
 
+.post-header-content {
+
+  .post-title,
+  .post-meta {
+    color: $white-color;
+  }
+
+  a {
+    color: $primary-color;
+  }
+}
+
 .post-head.main-header {
     height: 65%;
     min-height: 180px;
@@ -1267,7 +1329,7 @@ body:not(.post-template) .post-title {
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: $dark-color;
     transition: all 0.2s ease;
 }
 
@@ -1277,7 +1339,7 @@ body:not(.post-template) .post-title {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #bfc8cd 1px solid;
+    border: $dark-color 1px solid;
     text-decoration: none;
     border-radius: 4px;
     transition: border ease 0.3s;
@@ -1299,8 +1361,9 @@ body:not(.post-template) .post-title {
 
 .older-posts:hover,
 .newer-posts:hover {
-    color: #889093;
-    border-color: #98a0a4;
+    color: $white-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
 }
 
 .extra-pagination {
@@ -1348,19 +1411,20 @@ body:not(.post-template) .post-title {
     padding: 0.5rem 15px;
     border-top: #EBF2F6 1px solid;
     font-family: $heading-font;
-    font-size: 1rem;
-    line-height: 1.75em;
-    color: #BBC7CC;
+    font-size: 1.25rem;
+    line-height: 2em;
+    color: $white-color;
+    background-color: $dark-color;
 }
 
 .site-footer a {
-    color: #BBC7CC;
+    color: $white-color;
     text-decoration: none;
     font-weight: bold;
 }
 
 .site-footer a:hover {
-    color: #50585D;
+    color: $primary-color;
 }
 
 .poweredby {
@@ -1524,8 +1588,69 @@ body:not(.post-template) .post-title {
 
 nav {
 
+  .nav--toggle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    .iconic {
+      display: inline-block;
+      vertical-align: middle;
+
+      .iconic-property-stroke {
+        stroke: $white-color;
+      }
+    }
+  }
+
   &.nav--main {
     background-color: $dark-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    &[data-state=closed] {
+      right: 0%;
+      width: 0%;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.15s linear;
+    }
+
+    &[data-state=open] {
+      right: 0%;
+      width: 50%;
+      max-width: 400px;
+      opacity: 1;
+      overflow: visible;
+      transition: all 0.15s linear;
+    }
+
+    .nav--close {
+      text-align: right;
+
+      .iconic {
+
+        .iconic-property-stroke {
+          stroke: $alert-color;
+        }
+      }
+
+      &:hover {
+
+        .iconic {
+
+          .iconic-property-stroke {
+            stroke: darken($alert-color, 10);
+          }
+        }
+      }
+    }
 
     ul {
       list-style: none;
@@ -1535,8 +1660,14 @@ nav {
       li {
         margin: 0;
 
-        &:not(:last-child) {
+        &:not(:last-child):not(.nav--close) {
           border-bottom: darken($dark-color, 2) 1px solid;
+        }
+
+        &.nav--close {
+          position: relative;
+          display: inline-block;
+          float: right;
         }
 
         a {
@@ -1548,8 +1679,11 @@ nav {
             display: inline-block;
             vertical-align: middle;
             fill: $primary-color;
-            stroke: $primary-color;
             padding-right: 20px;
+
+            .iconic-property-stroke {
+              stroke: $primary-color;
+            }
           }
 
           span {
@@ -1562,12 +1696,14 @@ nav {
           }
 
           &:hover {
-            background-color: darken($primary-color, 10);
-            color: $white-color;
+            color: darken($primary-color, 10);
 
             .iconic {
-              fill: $white-color;
-              stroke: $white-color;
+              fill: darken($primary-color, 10);
+
+              .iconic-property-stroke {
+                stroke: darken($primary-color, 10);
+              }
             }
           }
         }
@@ -1582,6 +1718,10 @@ nav {
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
+
+    nav.nav--main[data-state="open"] {
+      width: 90% !important;
+    }
 
     .main-header {
         margin-bottom: 15px;
@@ -1835,6 +1975,15 @@ nav {
 
     .archive-template .main-header .page-description {
         display: none;
+    }
+
+    .site-footer {
+
+      section {
+        width: 100%;
+        padding: 6px 0;
+        text-align: center;
+      }
     }
 
 }

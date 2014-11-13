@@ -5,7 +5,9 @@
 <header class="main-header {{#if @blog.cover}}overlay" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+
         <span class="right">
+          <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
           <a href="#" class="nav--toggle">
             <img class="iconic iconic-md" title="menu" data-src="{{asset "iconic/svg/smart/menu.svg"}}">
           </a>
@@ -23,7 +25,17 @@
 {{! The main content area on the homepage }}
 <main id="content" class="content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+    <script type="text/javascript" src="https://odamae.io/form/js/light.js"></script>
+    <form id="odamae-contact-form" method="post" style="display: none">
+        <div class="odamae-row">
+    		<input type="text" class="odamae-input" name="name" id="name" value="" placeholder="Name" />
+    		<input type="text" class="odamae-input" name="contact" id="contact" value="" placeholder="Email" />
+    		<textarea class="odamae-textarea" name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+        </div>
+        <div class="odamae-row visual-captcha"></div>
+        <div class="odamae-row actions">
+    		<input type="submit" class="odamae-button odamae-submit" value="Send Message" onclick="odamaeSubmit(this)" data-apikey="odamae.io_d60cc1f79174c780fd2d0b0b9f52b1b2_8c85" />
+        </div>
+    </form>
 
 </main>
