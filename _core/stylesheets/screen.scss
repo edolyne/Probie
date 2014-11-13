@@ -28,7 +28,7 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
 
 /* \$primary-color: #64498B; */
-$primary-color: #CF3C52;
+$primary-color: #EE2652;
 $secondary-color: #AD423B;
 $dark-color: #191919;
 $grey-color: #CCCCCC;
@@ -1628,12 +1628,26 @@ nav {
     }
 
     &[data-state=open] {
+      position: fixed;
       right: 0%;
       width: 50%;
       max-width: 400px;
       opacity: 1;
       overflow: visible;
+      z-index: 3;
       transition: all 0.25s linear;
+
+      &:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba($dark-color, 0.85);
+      }
     }
 
     .nav--close {
@@ -1683,11 +1697,11 @@ nav {
           .iconic {
             display: inline-block;
             vertical-align: middle;
-            fill: $primary-color;
+            fill: $white-color;
             padding-right: 20px;
 
             .iconic-property-stroke {
-              stroke: $primary-color;
+              stroke: $white-color;
             }
           }
 
@@ -1698,16 +1712,17 @@ nav {
             font-weight: 300;
             font-size: 1.2em;
             text-transform: uppercase;
+            color: $white-color;
           }
 
           &:hover {
-            color: darken($primary-color, 10);
+            color: darken($white-color, 20);
 
             .iconic {
-              fill: darken($primary-color, 10);
+              fill: darken($white-color, 20);
 
               .iconic-property-stroke {
-                stroke: darken($primary-color, 10);
+                stroke: darken($white-color, 20);
               }
             }
           }
