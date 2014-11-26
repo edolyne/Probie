@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/EngineAndIrons/Probie.png?label=ready&title=Ready)](https://waffle.io/EngineAndIrons/Probie)
 # Probie
 
 The custom theme for [Ghost](http://github.com/tryghost/ghost/).
