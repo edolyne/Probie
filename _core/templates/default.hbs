@@ -72,7 +72,7 @@
         <a href="//newspring.cc" target="_blank">I <img class="iconic iconic--fluid" title="heart" data-src="{{asset "iconic/svg/smart/heart.svg"}}"> My Church</a>
       </section>
       <section class="poweredby">
-        Custom Theme by <a href="https://engineandirons.co">Engine &amp; Irons Design Co</a>
+        Custom Theme by <a href="/">Edolyne</a>
       </section>
     </footer>
 
@@ -102,16 +102,17 @@
       var navClose = document.querySelector('.nav--close');
       var toggleState = function (elem, one, two) {
         var elem = document.querySelector(elem);
-        elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);
-      };
+        elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);      };
 
       nav.onclick = function (e) {
         toggleState('.nav--main', 'closed', 'open');
+        $('body').toggleClass('menu--open');
         e.preventDefault();
       };
 
       navClose.onclick = function (e) {
         toggleState('.nav--main', 'closed', 'open');
+        $('body').toggleClass('menu--open');
         e.preventDefault();
       };
     </script>
